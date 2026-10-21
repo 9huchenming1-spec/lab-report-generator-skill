@@ -1,0 +1,77 @@
+{
+  "template_sha256": "0559e5a3ca8054e14fe70ef149e4ab2b6667fa353008070daf9d62c8ce894ea0",
+  "operations": [
+    {
+      "part": "word/document.xml",
+      "path": "/*[1]/*[1]/*[2]",
+      "expected": "姓名：{{姓名}}    班级：{{班级}}    学号：{{学号}}",
+      "text": "姓名：示例同学    班级：演示班    学号：DEMO-001"
+    },
+    {
+      "part": "word/document.xml",
+      "path": "/*[1]/*[1]/*[3]",
+      "expected": "实验日期：{{日期}}",
+      "text": "实验日期：2026-10-21"
+    },
+    {
+      "part": "word/document.xml",
+      "path": "/*[1]/*[1]/*[5]",
+      "expected": "{{目的}}",
+      "text": "实现插入排序与二分查找，分析循环和边界更新，使用正常及边界输入核对算法行为。"
+    },
+    {
+      "part": "word/document.xml",
+      "path": "/*[1]/*[1]/*[7]/*[3]/*[2]/*[2]",
+      "expected": "{{T1_DESIGN}}",
+      "text": "先复制输入列表，再将下标 index 处的元素插入已经有序的前缀。大于 current 的元素向右移动，空出的最终位置写入 current；因此原列表保持不变。"
+    },
+    {
+      "part": "word/document.xml",
+      "path": "/*[1]/*[1]/*[7]/*[4]/*[2]/*[2]",
+      "expected": "{{T1_CODE}}",
+      "text": "def insertion_sort(values):\n    result = list(values)\n    for index in range(1, len(result)):\n        current = result[index]\n        position = index - 1\n        while position >= 0 and result[position] > current:\n            result[position + 1] = result[position]\n            position -= 1\n        result[position + 1] = current\n    return result"
+    },
+    {
+      "part": "word/document.xml",
+      "path": "/*[1]/*[1]/*[7]/*[5]/*[2]/*[2]",
+      "expected": "{{T1_RESULT}}",
+      "text": "本次实际运行 Python 演示程序，退出码为 0。\nsort normal: [2, 2, 4, 5] original: [5, 2, 4, 2]\nsort empty: []\nsort single: [7]"
+    },
+    {
+      "part": "word/document.xml",
+      "path": "/*[1]/*[1]/*[7]/*[6]/*[2]/*[2]",
+      "expected": "{{T1_ANALYSIS}}",
+      "text": "普通输入得到 [2, 2, 4, 5]，重复值被保留；原列表仍为 [5, 2, 4, 2]。空列表和单元素均返回正确结果。由循环分析，最坏/平均时间复杂度为 O(n²)，已排序时为 O(n)；列表副本使额外空间为 O(n)。"
+    },
+    {
+      "part": "word/document.xml",
+      "path": "/*[1]/*[1]/*[10]/*[3]/*[2]/*[2]",
+      "expected": "{{T2_DESIGN}}",
+      "text": "使用闭区间 [left, right]。若中点小于目标，令 left = middle + 1；否则令 right = middle - 1。每次丢弃不含目标的一半，区间为空时返回 -1。"
+    },
+    {
+      "part": "word/document.xml",
+      "path": "/*[1]/*[1]/*[10]/*[4]/*[2]/*[2]",
+      "expected": "{{T2_CODE}}",
+      "text": "def binary_search(values, target):\n    left, right = 0, len(values) - 1\n    while left <= right:\n        middle = (left + right) // 2\n        if values[middle] == target:\n            return middle\n        if values[middle] < target:\n            left = middle + 1\n        else:\n            right = middle - 1\n    return -1"
+    },
+    {
+      "part": "word/document.xml",
+      "path": "/*[1]/*[1]/*[10]/*[5]/*[2]/*[2]",
+      "expected": "{{T2_RESULT}}",
+      "text": "本次实际运行输出如下；原始记录见公开演示的 run-results.txt。\nsearch found: 3\nsearch missing: -1\nsearch empty: -1"
+    },
+    {
+      "part": "word/document.xml",
+      "path": "/*[1]/*[1]/*[10]/*[6]/*[2]/*[2]",
+      "expected": "{{T2_ANALYSIS}}",
+      "text": "目标 7 位于下标 3；不存在的目标 4 和空列表均返回 -1。代码以升序输入为前提，不检查或排序输入。由区间每轮减半可得时间复杂度 O(log n)，使用常数个变量，额外空间 O(1)。"
+    },
+    {
+      "part": "word/document.xml",
+      "path": "/*[1]/*[1]/*[12]",
+      "expected": "{{总结}}",
+      "text": "两个函数在本次指定的正常与边界输入下得到预期结果。插入排序适合解释有序前缀的维护；二分查找依赖输入已排序。本次没有测量耗时，也未验证全部可能输入，不能据此推断性能实测或穷尽正确性。"
+    }
+  ]
+}

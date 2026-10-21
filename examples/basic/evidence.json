@@ -1,0 +1,38 @@
+{
+  "kind": "executed",
+  "created_utc": "2026-10-21T12:33:49.447311+00:00",
+  "command": [
+    "python",
+    "examples/basic/answer.py"
+  ],
+  "python": "3.12.14",
+  "platform": "Windows",
+  "source_sha256": "fa3df3e21280fd45ea566a9d7bf516c86ec73e42fb2dd64b7d5d07ff0da3d6cf",
+  "exit_code": 0,
+  "stdout": "sort normal: [2, 2, 4, 5] original: [5, 2, 4, 2]\nsort empty: []\nsort single: [7]\nsearch found: 3\nsearch missing: -1\nsearch empty: -1\n",
+  "stderr": "",
+  "requirements": [
+    {
+      "id": "任务1",
+      "code": "answer.py:insertion_sort",
+      "slots": "任务1四个表格栏目",
+      "evidence": "run-results.txt前3行",
+      "status": "complete"
+    },
+    {
+      "id": "任务2",
+      "code": "answer.py:binary_search",
+      "slots": "任务2四个表格栏目",
+      "evidence": "run-results.txt后3行",
+      "status": "complete"
+    }
+  ],
+  "package_comparison": {
+    "added": [],
+    "removed": [],
+    "changed": [
+      "word/document.xml"
+    ],
+    "unchanged_count": 18
+  }
+}

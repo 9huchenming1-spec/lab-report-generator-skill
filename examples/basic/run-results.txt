@@ -1,0 +1,6 @@
+sort normal: [2, 2, 4, 5] original: [5, 2, 4, 2]
+sort empty: []
+sort single: [7]
+search found: 3
+search missing: -1
+search empty: -1

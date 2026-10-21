@@ -1,0 +1,4 @@
+interface:
+  display_name: "实验报告生成"
+  short_description: "分析 Word 模板、实验要求与答案代码，按原模板生成内容可核对的实验报告"
+  default_prompt: "使用 $lab-report-generator，分析我提供的报告模板、实验要求和答案代码，按模板生成实验报告；影响结果的不明确事项先询问我。"
